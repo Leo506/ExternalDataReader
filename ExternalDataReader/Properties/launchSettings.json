@@ -1,0 +1,9 @@
+﻿{
+  "profiles": {
+    "ExternalDataReader": {
+      "commandName": "Executable",
+      "commandLineArgs": "/a=$(TargetPath) /c=ExternalDataReader.Program /m=21016318 /l=\"%AppData%\\iiko\\CashServer\\Logs\\DEBUG_plugin_PrimeHill.log\"",
+      "executablePath": "%ProgramFiles%\\iiko\\iikoRMS\\Front.Net\\Resto.Front.Api.Host.exe"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Authors>Arbus</Authors>
+        <Copyright>Copyright © Arbus</Copyright>
+        <Configurations>Debug;Release</Configurations>
+        <UseWPF>true</UseWPF>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+        <Optimize>false</Optimize>
+        <DebugType>full</DebugType>
+        <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(Configuration.Contains('Release'))">
+        <Optimize>True</Optimize>
+        <DebugType>none</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Costura.Fody" Version="5.7.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Resto.Front.Api.V8" Version="8.7.6032" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Manifest.xml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+</Project>
